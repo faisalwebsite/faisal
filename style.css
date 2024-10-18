@@ -173,7 +173,7 @@ span {
     box-shadow: 0 0 25px #0b6e95;
 }
 
-.skills, .education, .experience, .contact, .download-cv {
+.skills, .education, .experience, .contact {
     padding: 80px 0;
     text-align: center;
     opacity: 0;
@@ -181,12 +181,12 @@ span {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.skills.fade-in, .education.fade-in, .experience.fade-in, .contact.fade-in, .download-cv.fade-in {
+.skills.fade-in, .education.fade-in, .experience.fade-in, .contact.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-.skills h2, .education h2, .experience h2, .contact h2, .download-cv h2 {
+.skills h2, .education h2, .experience h2, .contact h2 {
     font-size: 4rem;
     margin-bottom: 40px;
     color: #0b6e95;
@@ -301,21 +301,6 @@ span {
     left: 0;
 }
 
-.download-cv p {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: #ccc;
-}
-
-.download-btn {
-    font-size: 1.8rem;
-    padding: 15px 30px;
-}
-
-.download-btn i {
-    margin-right: 10px;
-}
-
 .contact-content {
     display: flex;
     justify-content: space-between;
@@ -374,7 +359,8 @@ span {
 #scroll-indicator {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 20px; /* Changed from left: 50% to right: 20px */
+    transform: none; /* Removed translateX(-50%) */
     background-color: rgba(11, 110, 149, 0.8);
     color: white;
     padding: 10px 20px;
@@ -476,7 +462,7 @@ span {
         margin-top: 4rem;
     }
 
-    .skills h2, .education h2, .experience h2, .contact h2, .download-cv h2 {
+    .skills h2, .education h2, .experience h2, .contact h2 {
         font-size: 3rem;
     }
 

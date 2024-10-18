@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const skillsSection = document.querySelector('.skills');
     const educationSection = document.querySelector('.education');
     const experienceSection = document.querySelector('.experience');
-    const downloadCvSection = document.querySelector('.download-cv');
     const contactSection = document.querySelector('.contact');
     const typedTextSpan = document.getElementById("typed-text");
     const textArray = ["health informatics specialist", "data analyst", "systems integrator"];
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const triggerBottom = window.innerHeight / 5 * 4;
 
-        [skillsSection, educationSection, experienceSection, downloadCvSection, contactSection].forEach(section => {
+        [skillsSection, educationSection, experienceSection, contactSection].forEach(section => {
             const sectionTop = section.getBoundingClientRect().top;
             if (sectionTop < triggerBottom) {
                 section.classList.add('fade-in');
@@ -153,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('skills'),
         document.getElementById('education'),
         document.getElementById('experience'),
-        document.getElementById('download-cv'),
         document.getElementById('contact')
     ];
 
@@ -187,20 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             }
         }
-    }
-
-    // CV download link setup
-    const cvLink = document.getElementById('cv-download-link');
-    const cvFileName = 'Faisal Fahd Alsaedi.pdf';
-    const encodedFileName = encodeURIComponent(cvFileName);
-    
-    // Check if we're on GitHub Pages
-    if (window.location.hostname.includes('github.io')) {
-        const repoName = window.location.pathname.split('/')[1];
-        cvLink.href = `https://${window.location.hostname}/${repoName}/${encodedFileName}`;
-    } else {
-        // Local development
-        cvLink.href = `/${encodedFileName}`;
     }
 
     scrollIndicator.addEventListener('click', scrollToNextSection);
