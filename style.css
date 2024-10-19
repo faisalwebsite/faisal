@@ -91,7 +91,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background-color: transparent;
 }
 
 .home .home-content h1 {
@@ -112,22 +112,6 @@ span {
 
 .home-content p {
     font-size: 1.6rem;
-}
-
-.home-img {
-    border-radius: 50%;
-}
-
-.home-img img {
-    width: 32vw;
-    max-width: 400px;
-    border-radius: 50%;
-    box-shadow: 0 0 25px #0b6e95;
-    transition: 0.2s linear;
-}
-
-.home-img img:hover {
-    transform: scale(1.05);
 }
 
 .social-icons a {
@@ -200,7 +184,7 @@ span {
 }
 
 .skill {
-    background-color: #161616;
+    background-color: rgba(22, 22, 22, 0.8);
     border-radius: 10px;
     padding: 20px;
     width: 250px;
@@ -231,7 +215,7 @@ span {
 }
 
 .education-content, .experience-content {
-    background-color: #161616;
+    background-color: rgba(22, 22, 22, 0.8);
     border-radius: 10px;
     padding: 30px;
     max-width: 800px;
@@ -321,7 +305,7 @@ span {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-    background-color: #161616;
+    background-color: rgba(22, 22, 22, 0.8);
     color: #fff;
     border: 1px solid #0b6e95;
 }
@@ -359,8 +343,7 @@ span {
 #scroll-indicator {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* Changed from left: 50% to right: 20px */
-    transform: none; /* Removed translateX(-50%) */
+    right: 20px;
     background-color: rgba(11, 110, 149, 0.8);
     color: white;
     padding: 10px 20px;
@@ -397,6 +380,79 @@ span {
     60% {
         transform: translateY(-5px);
     }
+}
+
+.cv-tab {
+    position: fixed;
+    top: 50%;
+    right: -320px;
+    transform: translateY(-50%) rotate(-15deg);
+    width: 420px;
+    height: 620px;
+    background-color: transparent;
+    transition: right 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    z-index: 1001;
+    cursor: pointer;
+    overflow: visible;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    filter: blur(3px);
+}
+
+.cv-tab:hover {
+    right: -280px;
+    filter: blur(1px);
+}
+
+.cv-tab.open {
+    right: 20px;
+    transform: translateY(-50%) rotate(0deg);
+    filter: blur(0);
+}
+
+.cv-tab-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
+
+.cv-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.download-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #0b6e95;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #085d7f;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.home, .skills, .education, .experience, .contact {
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 1200px) {
@@ -457,11 +513,6 @@ span {
         font-size: 2.5rem;
     }
 
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
-
     .skills h2, .education h2, .experience h2, .contact h2 {
         font-size: 3rem;
     }
@@ -499,10 +550,6 @@ span {
         font-size: 4rem;
     }
 
-    .home-img img {
-        width: 90vw;
-    }
-
     .skill {
         width: 100%;
     }
@@ -513,6 +560,12 @@ span {
 
     .education-content p, .experience-content p, .experience-content li {
         font-size: 1.4rem;
+    }
+
+    .cv-tab {
+        width: 300px;
+        height: 450px;
+        right: -280px;
     }
 }
 
@@ -528,13 +581,10 @@ span {
     .home-content h3 {
         font-size: 2rem;
     }
-}
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    .cv-tab {
+        width: 250px;
+        height: 375px;
+        right: -230px;
+    }
 }

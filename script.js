@@ -31,8 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.insertBefore(canvas, document.body.firstChild);
     const ctx = canvas.getContext('2d');
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = document.documentElement.scrollHeight;
+    }
+
+    resizeCanvas();
 
     const particles = [];
     const particleCount = 80;
@@ -190,9 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollIndicator.addEventListener('click', scrollToNextSection);
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', function() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        resizeCanvas();
         initParticles();
+    });
+
+    window.addEventListener('scroll', function() {
+        resizeCanvas();
     });
 
     canvas.addEventListener('mousemove', function(event) {
@@ -203,6 +210,47 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.addEventListener('mouseout', function() {
         mouse.x = undefined;
         mouse.y = undefined;
+    });
+
+    // CV tab functionality
+    const cvTab = document.getElementById('cv-tab');
+    const downloadBtn = document.getElementById('download-cv');
+    let isTabOpen = false;
+
+    function openCvTab() {
+        cvTab.style.right = '20px';
+        cvTab.style.transform = 'translateY(-50%) rotate(0deg)';
+        cvTab.style.filter = 'blur(0)';
+        isTabOpen = true;
+    }
+
+    function closeCvTab() {
+        cvTab.style.right = '-320px';
+        cvTab.style.transform = 'translateY(-50%) rotate(-15deg)';
+        cvTab.style.filter = 'blur(3px)';
+        isTabOpen = false;
+    }
+
+    cvTab.addEventListener('click', function(event) {
+        event.stopPropagation();
+        if (isTabOpen) {
+            closeCvTab();
+        } else {
+            openCvTab();
+        }
+    });
+
+    // Close CV tab when clicking outside
+    document.addEventListener('click', function(event) {
+        if (isTabOpen && !cvTab.contains(event.target)) {
+            closeCvTab();
+        }
+    });
+
+    // Download CV functionality
+    downloadBtn.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the CV tab from closing when clicking the download button
+        window.open('https://cdn.discordapp.com/attachments/1219061950688788490/1297076001066713178/image.png?ex=67149ba9&is=67134a29&hm=d375408272a46018a9a6123ada76d8118c85eda87adc7db5a108e346a038cdac&', '_blank');
     });
 
     handleScroll(); // Initial check
