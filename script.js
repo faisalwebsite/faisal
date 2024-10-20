@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Download CV functionality
     downloadBtn.addEventListener('click', function(event) {
         event.stopPropagation(); // Prevent the CV tab from closing when clicking the download button
-        window.open('https://cdn.discordapp.com/attachments/1219061950688788490/1297076001066713178/image.png?ex=67149ba9&is=67134a29&hm=d375408272a46018a9a6123ada76d8118c85eda87adc7db5a108e346a038cdac&', '_blank');
+        window.open('https://cdn.discordapp.com/attachments/1219061950688788490/1297076001066713178/image.png?ex=671695e9&is=67154469&hm=a171d0779730355e512991601ae912b5703edc5c212fad3ec1504e17839fe6ef&');
     });
 
     handleScroll(); // Initial check
