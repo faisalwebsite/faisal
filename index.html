@@ -8,6 +8,11 @@
     <title>Faisal</title>
 </head>
 <body>
+    <!-- Background elements -->
+    <div class="background-texture"></div>
+    <div class="background-watermark">FAISAL</div>
+    <div class="ambient-light"></div>
+
     <div class="svg-background">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg">  
             <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
@@ -16,34 +21,43 @@
     </div>
 
     <header id="main-header">
-        <a href="#" class="logo">Faisal's website</a>
-        <div class="menu-icon">
+        <a href="#" class="logo">
+            <i class="fas fa-code"></i>
+            Faisal's website
+        </a>
+        <div class="menu-icon" aria-label="Toggle navigation menu">
             <i class="fas fa-bars"></i>
         </div>
         <nav>
-            <a href="#" class="active">Home</a>
+            <a href="#home">Home</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="contact-btn">Contact</a>
         </nav>
     </header>
 
-    <section class="home">
+    <section class="home" id="home">
         <div class="home-content">
             <h1>hi, it's me <span>Faisal</span></h1>
             <h3 class="typing-text">i am <span id="typed-text"></span></h3>
             <p>A Health Informatics graduate with hands-on experience as a Health Informatics Specialist in the Medical City, recognized for outstanding training performance, and certified by the Saudi Commission for Health Specialties. I am eager to contribute in areas such as health data analysis, health information systems, systems integration, or health informatics training. My goal is to leverage my skills in data analysis, health systems management, and quality assurance to enhance organizational performance in a dynamic, growth-focused environment.</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/faisal-alsaedi-b3b15b320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://wa.me/message/6JNGY7EOKOU4I1"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://x.com/FaisalHiS_"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/faisal-alsaedi-b3b15b320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/message/6JNGY7EOKOU4I1" aria-label="WhatsApp Contact"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://x.com/FaisalHiS_" aria-label="Twitter Profile"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <a href="https://wa.me/message/6JNGY7EOKOU4I1" class="btn">Hire me</a>
         </div>
     </section>
 
-    <section id="skills" class="skills">
+    <section class="skills" id="skills">
+        <!-- Add glowing effects -->
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+        
         <h2>My Skills</h2>
         <div class="skills-container">
             <div class="skill">
@@ -82,7 +96,13 @@
     </div>
 </section>
 
-    <section id="experience" class="experience">
+    <section class="experience" id="experience">
+        <!-- Add glowing effects -->
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+        <div class="glow-effect"></div>
+
         <h2>Experience</h2>
         <div class="experience-content">
             <h3>Health Informatics Specialist</h3>
@@ -98,10 +118,14 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- Contact Form Section -->
+    <div id="contact-form" class="contact-form-section">
+        <button class="close-form" aria-label="Close form">
+            <i class="fas fa-times"></i>
+        </button>
         <h2>Contact Me</h2>
         <div class="contact-content">
-            <form id="contact-form" action="https://formspree.io/f/xanyyzqk" method="POST">
+            <form action="https://formspree.io/f/xanyyzqk" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
@@ -122,19 +146,61 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <div id="scroll-indicator" class="scroll-arrow">
         <span class="arrow-text">Scroll</span>
         <i class="fas fa-chevron-down"></i>
     </div>
 
-    <div id="cv-tab" class="cv-tab">
-    <div class="cv-tab-content">
-        <img src="https://i.imgur.com/TWN0rZu.png" alt="CV" class="cv-image" />
-        <button id="download-cv" class="download-btn">Download CV</button>
-    </div>
-</div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>Faisal</span>
+                </div>
+                <p>A passionate Full Stack Developer specializing in creating innovative web solutions with modern technologies.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i>Home</a></li>
+                    <li><a href="#skills"><i class="fas fa-chevron-right"></i>Skills</a></li>
+                    <li><a href="#experience"><i class="fas fa-chevron-right"></i>Experience</a></li>
+                    <li><a href="#education"><i class="fas fa-chevron-right"></i>Education</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>faisal0551369970@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+966551369970</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Madinah, Saudi Arabia</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2024 Faisal. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
